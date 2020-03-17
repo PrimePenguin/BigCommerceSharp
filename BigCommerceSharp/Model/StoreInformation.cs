@@ -247,7 +247,7 @@ namespace BigCommerceSharp.Model {
     /// <value></value>
     [DataMember(Name="active_comparison_modules", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "active_comparison_modules")]
-    public List<Object> ActiveComparisonModules { get; set; }
+    public List<object> ActiveComparisonModules { get; set; }
 
     /// <summary>
     /// Gets or Sets Features

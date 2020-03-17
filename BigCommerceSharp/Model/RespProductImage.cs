@@ -16,7 +16,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Common ProductImage properties.</value>
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
-    public Object Data { get; set; }
+    public object Data { get; set; }
 
     /// <summary>
     /// Empty meta object; may be used later.
@@ -24,7 +24,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Empty meta object; may be used later.</value>
     [DataMember(Name="meta", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "meta")]
-    public Object Meta { get; set; }
+    public object Meta { get; set; }
 
 
     /// <summary>

@@ -28,25 +28,25 @@ namespace BigCommerceSharp.Client
         /// Gets or sets the username (HTTP basic authentication).
         /// </summary>
         /// <value>The username.</value>
-        public static String Username { get; set; }
+        public static string Username { get; set; }
   
         /// <summary>
         /// Gets or sets the password (HTTP basic authentication).
         /// </summary>
         /// <value>The password.</value>
-        public static String Password { get; set; }
+        public static string Password { get; set; }
   
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
         /// </summary>
         /// <value>The API key.</value>
-        public static Dictionary<String, String> ApiKey = new Dictionary<String, String>();
+        public static Dictionary<string, string> ApiKey = new Dictionary<string, string>();
   
         /// <summary>
         /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
         /// </summary>
         /// <value>The prefix of the API key.</value>
-        public static Dictionary<String, String> ApiKeyPrefix = new Dictionary<String, String>();
+        public static Dictionary<string, string> ApiKeyPrefix = new Dictionary<string, string>();
   
         private static string _tempFolderPath = Path.GetTempPath();
   
@@ -54,13 +54,13 @@ namespace BigCommerceSharp.Client
         /// Gets or sets the temporary folder path to store the files downloaded from the server.
         /// </summary>
         /// <value>Folder path.</value>
-        public static String TempFolderPath
+        public static string TempFolderPath
         {
             get { return _tempFolderPath; }
   
             set 
             {
-                if (String.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     _tempFolderPath = value;
                     return;
@@ -90,7 +90,7 @@ namespace BigCommerceSharp.Client
         /// No validation is done to ensure that the string you're providing is valid
         /// </summary>
         /// <value>The DateTimeFormat string</value>
-        public static String DateTimeFormat
+        public static string DateTimeFormat
         {
             get
             {
@@ -114,9 +114,9 @@ namespace BigCommerceSharp.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (IO.Swagger) Debug Report:\n";
+            string report = "C# SDK (IO.Swagger) Debug Report:\n";
             report += "    OS: " + Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + Assembly
                      .GetExecutingAssembly()

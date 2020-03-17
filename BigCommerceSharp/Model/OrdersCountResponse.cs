@@ -15,7 +15,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="statuses", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "statuses")]
-    public Object Statuses { get; set; }
+    public object Statuses { get; set; }
 
     /// <summary>
     /// Total number of orders in the store

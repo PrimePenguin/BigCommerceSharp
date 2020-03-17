@@ -63,7 +63,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Product Option `option_value`.</value>
     [DataMember(Name="option_values", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "option_values")]
-    public Object OptionValues { get; set; }
+    public object OptionValues { get; set; }
 
 
     /// <summary>

@@ -63,7 +63,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="modifiers", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "modifiers")]
-    public List<Object> Modifiers { get; set; }
+    public List<object> Modifiers { get; set; }
 
     /// <summary>
     /// Minimum Advertised Price.

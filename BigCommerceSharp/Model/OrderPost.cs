@@ -16,7 +16,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="products", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "products")]
-    public List<Object> Products { get; set; }
+    public List<object> Products { get; set; }
 
     /// <summary>
     /// Gets or Sets BillingAddress

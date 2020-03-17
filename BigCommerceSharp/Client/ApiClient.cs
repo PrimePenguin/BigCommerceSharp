@@ -14,13 +14,13 @@ namespace BigCommerceSharp.Client
     /// </summary>
     public class ApiClient
     {
-        private readonly Dictionary<String, String> _defaultHeaderMap = new Dictionary<String, String>();
+        private readonly Dictionary<string, string> _defaultHeaderMap = new Dictionary<string, string>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath="https://api.bigcommerce.com/stores/{$$.env.store_hash}/v3")
+        public ApiClient(string basePath="https://api.bigcommerce.com/stores/{$$.env.store_hash}/v3")
         {
             BasePath = basePath;
             RestClient = new RestClient(BasePath);
@@ -41,7 +41,7 @@ namespace BigCommerceSharp.Client
         /// <summary>
         /// Gets the default header.
         /// </summary>
-        public Dictionary<String, String> DefaultHeader
+        public Dictionary<string, string> DefaultHeader
         {
             get { return _defaultHeaderMap; }
         }
@@ -58,9 +58,9 @@ namespace BigCommerceSharp.Client
         /// <param name="fileParams">File parameters.</param>
         /// <param name="authSettings">Authentication settings.</param>
         /// <returns>Object</returns>
-        public Object CallApi(String path, RestSharp.Method method, Dictionary<String, String> queryParams, String postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, String[] authSettings)
+        public object CallApi(string path, RestSharp.Method method, Dictionary<string, string> queryParams, string postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, string[] authSettings)
         {
 
             var request = new RestRequest(path, method);
@@ -90,7 +90,7 @@ namespace BigCommerceSharp.Client
             if (postBody != null) // http body (model) parameter
                 request.AddParameter("application/json", postBody, ParameterType.RequestBody);
 
-            return (Object)RestClient.Execute(request);
+            return (object)RestClient.Execute(request);
 
         }
 
@@ -145,7 +145,7 @@ namespace BigCommerceSharp.Client
                 // For example: 2009-06-15T13:45:30.0000000
                 return ((DateTime)obj).ToString (Configuration.DateTimeFormat);
             else if (obj is List<string>)
-                return String.Join(",", (obj as List<string>).ToArray());
+                return string.Join(",", (obj as List<string>).ToArray());
             else
                 return Convert.ToString (obj);
         }
@@ -159,14 +159,14 @@ namespace BigCommerceSharp.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(string content, Type type, IList<Parameter> headers=null)
         {
-            if (type == typeof(Object)) // return an object
+            if (type == typeof(object)) // return an object
             {
                 return content;
             }
 
             if (type == typeof(Stream))
             {
-                var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
+                var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
                     ? Path.GetTempPath()
                     : Configuration.TempFolderPath;
 
@@ -188,7 +188,7 @@ namespace BigCommerceSharp.Client
                 return DateTime.Parse(content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+            if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
             {
                 return ConvertType(content, type);
             }
@@ -243,7 +243,7 @@ namespace BigCommerceSharp.Client
         /// <param name="queryParams">Query parameters.</param>
         /// <param name="headerParams">Header parameters.</param>
         /// <param name="authSettings">Authentication settings.</param>
-        public void UpdateParamsForAuth(Dictionary<String, String> queryParams, Dictionary<String, String> headerParams, string[] authSettings)
+        public void UpdateParamsForAuth(Dictionary<string, string> queryParams, Dictionary<string, string> headerParams, string[] authSettings)
         {
             if (authSettings == null || authSettings.Length == 0)
                 return;
@@ -285,7 +285,7 @@ namespace BigCommerceSharp.Client
         /// <param name="fromObject">Object to be casted</param>
         /// <param name="toObject">Target type</param>
         /// <returns>Casted object</returns>
-        public static Object ConvertType(Object fromObject, Type toObject) {
+        public static object ConvertType(object fromObject, Type toObject) {
             return Convert.ChangeType(fromObject, toObject);
         }
 

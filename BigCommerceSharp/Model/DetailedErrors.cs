@@ -10,7 +10,7 @@ namespace BigCommerceSharp.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class DetailedErrors : Dictionary<String, string> {
+  public class DetailedErrors : Dictionary<string, string> {
 
     /// <summary>
     /// Get the string presentation of the object

@@ -16,7 +16,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="batch_errors", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "batch_errors")]
-    public List<Object> BatchErrors { get; set; }
+    public List<object> BatchErrors { get; set; }
 
 
     /// <summary>

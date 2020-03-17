@@ -39,7 +39,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Depends on the shipping-method type. See the [supported settings object](#supported-settings).</value>
     [DataMember(Name="settings", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "settings")]
-    public Object Settings { get; set; }
+    public object Settings { get; set; }
 
     /// <summary>
     /// Whether or not this shipping-zone method is enabled.
@@ -55,7 +55,7 @@ namespace BigCommerceSharp.Model {
     /// <value>`fixed_surcharge`: flat-rate handling fee applied to shipping cost.  `percentage_surcharge`: percentage handling fee applied to shipping cost</value>
     [DataMember(Name="handling_fees", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "handling_fees")]
-    public Object HandlingFees { get; set; }
+    public object HandlingFees { get; set; }
 
     /// <summary>
     /// Whether or not this shipping zone is the fallback if all others are not valid for the order.

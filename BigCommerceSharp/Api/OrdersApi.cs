@@ -34,7 +34,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <returns></returns>
-        void DeleteAnOrder (int? orderId, string accept, string contentType, Object body);
+        void DeleteAnOrder (int? orderId, string accept, string contentType, object body);
         /// <summary>
         /// Get All Orders Gets a list of orders using the filter query. (The default sort is by order id, from lowest to highest.)
         /// </summary>
@@ -67,7 +67,7 @@ namespace BigCommerceSharp.Api
         /// <param name="orderId">ID of the order</param>
         /// <param name="body"></param>
         /// <returns>Order1</returns>
-        Order1 GetAnOrder (string accept, string contentType, int? orderId, Object body);
+        Order1 GetAnOrder (string accept, string contentType, int? orderId, object body);
         /// <summary>
         /// Get a Count of Orders Gets an array of orders in the store organized by order status.
         /// </summary>
@@ -108,7 +108,7 @@ namespace BigCommerceSharp.Api
         /// Initializes a new instance of the <see cref="OrdersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public OrdersApi(String basePath)
+        public OrdersApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -118,7 +118,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -128,7 +128,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -162,18 +162,18 @@ namespace BigCommerceSharp.Api
             var path = "/orders";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -205,17 +205,17 @@ namespace BigCommerceSharp.Api
             var path = "/orders";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -236,7 +236,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param> 
         /// <param name="body"></param> 
         /// <returns></returns>            
-        public void DeleteAnOrder (int? orderId, string accept, string contentType, Object body)
+        public void DeleteAnOrder (int? orderId, string accept, string contentType, object body)
         {
             
             // verify the required parameter 'orderId' is set
@@ -253,18 +253,18 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "order_id" + "}", ApiClient.ParameterToString(orderId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -313,11 +313,11 @@ namespace BigCommerceSharp.Api
             var path = "/orders";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
              if (minId != null) queryParams.Add("min_id", ApiClient.ParameterToString(minId)); // query parameter
  if (maxId != null) queryParams.Add("max_id", ApiClient.ParameterToString(maxId)); // query parameter
@@ -340,7 +340,7 @@ namespace BigCommerceSharp.Api
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -361,7 +361,7 @@ namespace BigCommerceSharp.Api
         /// <param name="orderId">ID of the order</param> 
         /// <param name="body"></param> 
         /// <returns>Order1</returns>            
-        public Order1 GetAnOrder (string accept, string contentType, int? orderId, Object body)
+        public Order1 GetAnOrder (string accept, string contentType, int? orderId, object body)
         {
             
             // verify the required parameter 'accept' is set
@@ -378,18 +378,18 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "order_id" + "}", ApiClient.ParameterToString(orderId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -421,17 +421,17 @@ namespace BigCommerceSharp.Api
             var path = "/orders/count";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -472,18 +472,18 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "order_id" + "}", ApiClient.ParameterToString(orderId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

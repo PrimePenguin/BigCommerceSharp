@@ -26,7 +26,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <returns></returns>
-        void ShippingCarrierConnectionPost (string accept, string contentType, Object body);
+        void ShippingCarrierConnectionPost (string accept, string contentType, object body);
         /// <summary>
         /// Update a Carrier Connection Updates a *Carrier Connection*.  Updating the carrier connection is done using the same information as creating the connection. This endpoint can be used to update credentials.
         /// </summary>
@@ -34,7 +34,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param>
         /// <param name="body">The request body will vary by carrier. See [Create a Carrier Connection](/api-reference/store-management/shipping-api/shipping-carrier/postshippingcarrierconnection). </param>
         /// <returns></returns>
-        void UpdateACarrierConnection (string accept, string contentType, Object body);
+        void UpdateACarrierConnection (string accept, string contentType, object body);
     }
   
     /// <summary>
@@ -59,7 +59,7 @@ namespace BigCommerceSharp.Api
         /// Initializes a new instance of the <see cref="ShippingCarrierApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ShippingCarrierApi(String basePath)
+        public ShippingCarrierApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -69,7 +69,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -79,7 +79,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -113,18 +113,18 @@ namespace BigCommerceSharp.Api
             var path = "/shipping/carrier/connection";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -144,7 +144,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param> 
         /// <param name="body"></param> 
         /// <returns></returns>            
-        public void ShippingCarrierConnectionPost (string accept, string contentType, Object body)
+        public void ShippingCarrierConnectionPost (string accept, string contentType, object body)
         {
             
             // verify the required parameter 'accept' is set
@@ -157,18 +157,18 @@ namespace BigCommerceSharp.Api
             var path = "/shipping/carrier/connection";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -188,7 +188,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param> 
         /// <param name="body">The request body will vary by carrier. See [Create a Carrier Connection](/api-reference/store-management/shipping-api/shipping-carrier/postshippingcarrierconnection). </param> 
         /// <returns></returns>            
-        public void UpdateACarrierConnection (string accept, string contentType, Object body)
+        public void UpdateACarrierConnection (string accept, string contentType, object body)
         {
             
             // verify the required parameter 'accept' is set
@@ -201,18 +201,18 @@ namespace BigCommerceSharp.Api
             var path = "/shipping/carrier/connection";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

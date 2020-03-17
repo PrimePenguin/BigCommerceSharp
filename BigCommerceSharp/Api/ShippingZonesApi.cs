@@ -75,7 +75,7 @@ namespace BigCommerceSharp.Api
         /// Initializes a new instance of the <see cref="ShippingZonesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ShippingZonesApi(String basePath)
+        public ShippingZonesApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -85,7 +85,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -95,7 +95,7 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -129,18 +129,18 @@ namespace BigCommerceSharp.Api
             var path = "/shipping/zones";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -177,17 +177,17 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -224,17 +224,17 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -266,17 +266,17 @@ namespace BigCommerceSharp.Api
             var path = "/shipping/zones";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -317,18 +317,18 @@ namespace BigCommerceSharp.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
  if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
                         postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
+            string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
