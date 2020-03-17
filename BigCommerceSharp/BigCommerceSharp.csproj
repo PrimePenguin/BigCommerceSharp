@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
+    <AssemblyName>BigCommerceSharp</AssemblyName>
+    <RootNamespace>BigCommerceSharp</RootNamespace>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Description>BigCommerceSharp is a C# and .NET library that helps developers easily authenticate with and manage BigCommerce stores.</Description>
+    <Authors>Ajay Kumar</Authors>
+    <Copyright>Prime Penguin</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/PrimePenguin/BigCommerceSharp/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PrimePenguin/BigCommerceSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PrimePenguin/BigCommerceSharp</RepositoryUrl>
+    <PackageTags>SquareSpace,ecommerce</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/BigCommerceSharp/master/PrimePenguin.png</PackageIconUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
+    <DefineConstants>NETFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
+    <DefineConstants>NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
+    <DefineConstants>NETCORE</DefineConstants>
+  </PropertyGroup>
+</Project>

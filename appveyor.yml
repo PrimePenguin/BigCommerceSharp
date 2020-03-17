@@ -1,0 +1,27 @@
+version: 0.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
+image: Visual Studio 2017
+build_script:
+- ps: ./scripts/build.ps1
+environment:
+  APPVEYOR_REPO_TAG: true
+artifacts:
+- path: SquarespaceSharp/bin/Release/netstandard1.4
+  name: netstandard16
+- path: SquarespaceSharp/bin/Release/net45
+  name: net461
+skip_commits:
+  message: /\[skip\]/
+  files:
+    - readme.md
+    - LICENSE
+    - .gitignore
+    - .vscode/*
+    - changelog.md
+deploy:
+- provider: NuGet
+  api_key:
+    secure: +g+5jf6BcIJOVmbSPUsP2YZG3WSCx1oDtxdcj9WgsJhRoWoWXWsf5w0OC3TPunMM
+  on:
+    branch: master
