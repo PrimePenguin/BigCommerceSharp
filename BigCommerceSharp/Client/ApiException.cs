@@ -1,6 +1,6 @@
 using System;
 
-namespace IO.Swagger.Client {
+namespace BigCommerceSharp.Client {
   /// <summary>
   /// API Exception
   /// </summary>

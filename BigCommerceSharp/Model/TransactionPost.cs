@@ -1,19 +1,17 @@
 using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  ///
   /// </summary>
   [DataContract]
   public class TransactionPost {
     /// <summary>
-    /// Store event that created the transaction. 
+    /// Store event that created the transaction.
     /// </summary>
     /// <value>Store event that created the transaction. </value>
     [DataMember(Name="event", EmitDefaultValue=false)]
@@ -21,7 +19,7 @@ namespace IO.Swagger.Model {
     public string Event { get; set; }
 
     /// <summary>
-    /// The payment method: `credit_card` - a credit-card transaction; `electronic_wallet` - an online wallet; `store_credit` - a transaction using store credit; `gift_certificate` - a transaction using a gift certificate; `custom` - manual payment methods; `token` - payment token; `nonce` - temporary payment token; `offsite` - online payment off the site (e.g., PayPal); `offline` - payment method that takes place offline. 
+    /// The payment method: `credit_card` - a credit-card transaction; `electronic_wallet` - an online wallet; `store_credit` - a transaction using store credit; `gift_certificate` - a transaction using a gift certificate; `custom` - manual payment methods; `token` - payment token; `nonce` - temporary payment token; `offsite` - online payment off the site (e.g., PayPal); `offline` - payment method that takes place offline.
     /// </summary>
     /// <value>The payment method: `credit_card` - a credit-card transaction; `electronic_wallet` - an online wallet; `store_credit` - a transaction using store credit; `gift_certificate` - a transaction using a gift certificate; `custom` - manual payment methods; `token` - payment token; `nonce` - temporary payment token; `offsite` - online payment off the site (e.g., PayPal); `offline` - payment method that takes place offline. </value>
     [DataMember(Name="method", EmitDefaultValue=false)]
@@ -29,7 +27,7 @@ namespace IO.Swagger.Model {
     public string Method { get; set; }
 
     /// <summary>
-    /// Amount of money in the transaction. 
+    /// Amount of money in the transaction.
     /// </summary>
     /// <value>Amount of money in the transaction. </value>
     [DataMember(Name="amount", EmitDefaultValue=false)]
@@ -37,7 +35,7 @@ namespace IO.Swagger.Model {
     public float? Amount { get; set; }
 
     /// <summary>
-    /// Currency used for the transaction. 
+    /// Currency used for the transaction.
     /// </summary>
     /// <value>Currency used for the transaction. </value>
     [DataMember(Name="currency", EmitDefaultValue=false)]
@@ -45,7 +43,7 @@ namespace IO.Swagger.Model {
     public string Currency { get; set; }
 
     /// <summary>
-    /// The payment gateway, where applicable. 
+    /// The payment gateway, where applicable.
     /// </summary>
     /// <value>The payment gateway, where applicable. </value>
     [DataMember(Name="gateway", EmitDefaultValue=false)]
@@ -53,7 +51,7 @@ namespace IO.Swagger.Model {
     public string Gateway { get; set; }
 
     /// <summary>
-    /// The transaction ID returned by the payment gateway for this transaction item. 
+    /// The transaction ID returned by the payment gateway for this transaction item.
     /// </summary>
     /// <value>The transaction ID returned by the payment gateway for this transaction item. </value>
     [DataMember(Name="gateway_transaction_id", EmitDefaultValue=false)]
@@ -61,7 +59,7 @@ namespace IO.Swagger.Model {
     public string GatewayTransactionId { get; set; }
 
     /// <summary>
-    /// The datetime of the transaction. 
+    /// The datetime of the transaction.
     /// </summary>
     /// <value>The datetime of the transaction. </value>
     [DataMember(Name="date_created", EmitDefaultValue=false)]
@@ -69,7 +67,7 @@ namespace IO.Swagger.Model {
     public DateTime? DateCreated { get; set; }
 
     /// <summary>
-    /// True if the transaction performed was a test, or if the gateway is in test mode. 
+    /// True if the transaction performed was a test, or if the gateway is in test mode.
     /// </summary>
     /// <value>True if the transaction performed was a test, or if the gateway is in test mode. </value>
     [DataMember(Name="test", EmitDefaultValue=false)]
@@ -77,7 +75,7 @@ namespace IO.Swagger.Model {
     public bool? Test { get; set; }
 
     /// <summary>
-    /// Status of the transaction. 
+    /// Status of the transaction.
     /// </summary>
     /// <value>Status of the transaction. </value>
     [DataMember(Name="status", EmitDefaultValue=false)]
@@ -85,7 +83,7 @@ namespace IO.Swagger.Model {
     public string Status { get; set; }
 
     /// <summary>
-    /// Result of gateway fraud review, if any. Default is `false`. 
+    /// Result of gateway fraud review, if any. Default is `false`.
     /// </summary>
     /// <value>Result of gateway fraud review, if any. Default is `false`. </value>
     [DataMember(Name="fraud_review", EmitDefaultValue=false)]
@@ -93,7 +91,7 @@ namespace IO.Swagger.Model {
     public bool? FraudReview { get; set; }
 
     /// <summary>
-    /// Identifier for an existing transaction upon which this transaction acts. 
+    /// Identifier for an existing transaction upon which this transaction acts.
     /// </summary>
     /// <value>Identifier for an existing transaction upon which this transaction acts. </value>
     [DataMember(Name="reference_transaction_id", EmitDefaultValue=false)]
@@ -115,14 +113,6 @@ namespace IO.Swagger.Model {
     public Custom1 Custom { get; set; }
 
     /// <summary>
-    /// Gets or Sets 
-    /// </summary>
-    [DataMember(Name="", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "")]
-    public string  { get; set; }
-
-
-    /// <summary>
     /// Get the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>
@@ -142,7 +132,6 @@ namespace IO.Swagger.Model {
       sb.Append("  ReferenceTransactionId: ").Append(ReferenceTransactionId).Append("\n");
       sb.Append("  Offline: ").Append(Offline).Append("\n");
       sb.Append("  Custom: ").Append(Custom).Append("\n");
-      sb.Append("  : ").Append().Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

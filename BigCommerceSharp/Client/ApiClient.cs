@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text.RegularExpressions;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Web;
-using System.Linq;
-using System.Net;
-using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Extensions;
 
-namespace IO.Swagger.Client
+namespace BigCommerceSharp.Client
 {
     /// <summary>
     /// API client is mainly responible for making the HTTP call to the API backend.
@@ -19,7 +15,7 @@ namespace IO.Swagger.Client
     public class ApiClient
     {
         private readonly Dictionary<String, String> _defaultHeaderMap = new Dictionary<String, String>();
-  
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class.
         /// </summary>
@@ -29,19 +25,19 @@ namespace IO.Swagger.Client
             BasePath = basePath;
             RestClient = new RestClient(BasePath);
         }
-    
+
         /// <summary>
         /// Gets or sets the base path.
         /// </summary>
         /// <value>The base path</value>
         public string BasePath { get; set; }
-    
+
         /// <summary>
         /// Gets or sets the RestClient.
         /// </summary>
         /// <value>An instance of the RestClient</value>
         public RestClient RestClient { get; set; }
-    
+
         /// <summary>
         /// Gets the default header.
         /// </summary>
@@ -49,7 +45,7 @@ namespace IO.Swagger.Client
         {
             get { return _defaultHeaderMap; }
         }
-    
+
         /// <summary>
         /// Makes the HTTP request (Sync).
         /// </summary>
@@ -63,12 +59,12 @@ namespace IO.Swagger.Client
         /// <param name="authSettings">Authentication settings.</param>
         /// <returns>Object</returns>
         public Object CallApi(String path, RestSharp.Method method, Dictionary<String, String> queryParams, String postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams, 
+            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, String[] authSettings)
         {
 
             var request = new RestRequest(path, method);
-   
+
             UpdateParamsForAuth(queryParams, headerParams, authSettings);
 
             // add default header, if any
@@ -97,7 +93,7 @@ namespace IO.Swagger.Client
             return (Object)RestClient.Execute(request);
 
         }
-    
+
         /// <summary>
         /// Add default header.
         /// </summary>
@@ -108,7 +104,7 @@ namespace IO.Swagger.Client
         {
             _defaultHeaderMap.Add(key, value);
         }
-    
+
         /// <summary>
         /// Escape string (url-encoded).
         /// </summary>
@@ -116,9 +112,9 @@ namespace IO.Swagger.Client
         /// <returns>Escaped string.</returns>
         public string EscapeString(string str)
         {
-            return RestSharp.Contrib.HttpUtility.UrlEncode(str);
+            return HttpUtility.UrlEncode(str);
         }
-    
+
         /// <summary>
         /// Create FileParameter based on Stream.
         /// </summary>
@@ -132,7 +128,7 @@ namespace IO.Swagger.Client
             else
                 return FileParameter.Create(name, stream.ReadAsBytes(), "no_file_name_provided");
         }
-    
+
         /// <summary>
         /// If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
         /// If parameter is a list of string, join the list with ",".
@@ -153,7 +149,7 @@ namespace IO.Swagger.Client
             else
                 return Convert.ToString (obj);
         }
-    
+
         /// <summary>
         /// Deserialize the JSON string into a proper object.
         /// </summary>
@@ -194,9 +190,9 @@ namespace IO.Swagger.Client
 
             if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
             {
-                return ConvertType(content, type); 
+                return ConvertType(content, type);
             }
-    
+
             // at this point, it must be a model (json)
             try
             {
@@ -207,7 +203,7 @@ namespace IO.Swagger.Client
                 throw new ApiException(500, e.Message);
             }
         }
-    
+
         /// <summary>
         /// Serialize an object into JSON string.
         /// </summary>
@@ -224,7 +220,7 @@ namespace IO.Swagger.Client
                 throw new ApiException(500, e.Message);
             }
         }
-    
+
         /// <summary>
         /// Get the API key with prefix.
         /// </summary>
@@ -240,7 +236,7 @@ namespace IO.Swagger.Client
             else
                 return apiKeyValue;
         }
-    
+
         /// <summary>
         /// Update parameters based on authentication.
         /// </summary>
@@ -259,11 +255,11 @@ namespace IO.Swagger.Client
                 {
                     case "X-Auth-Client":
                         headerParams["X-Auth-Client"] = GetApiKeyWithPrefix("X-Auth-Client");
-                        
+
                         break;
                     case "X-Auth-Token":
                         headerParams["X-Auth-Token"] = GetApiKeyWithPrefix("X-Auth-Token");
-                        
+
                         break;
                     default:
                         //TODO show warning about security definition not found
@@ -271,7 +267,7 @@ namespace IO.Swagger.Client
                 }
             }
         }
- 
+
         /// <summary>
         /// Encode string in base64 format.
         /// </summary>
@@ -282,7 +278,7 @@ namespace IO.Swagger.Client
             var textByte = System.Text.Encoding.UTF8.GetBytes(text);
             return System.Convert.ToBase64String(textByte);
         }
-    
+
         /// <summary>
         /// Dynamically cast the object into target type.
         /// </summary>
@@ -292,6 +288,6 @@ namespace IO.Swagger.Client
         public static Object ConvertType(Object fromObject, Type toObject) {
             return Convert.ChangeType(fromObject, toObject);
         }
-  
+
     }
 }

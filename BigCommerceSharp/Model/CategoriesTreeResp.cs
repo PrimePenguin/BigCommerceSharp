@@ -1,11 +1,10 @@
 using System;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// Returns the categories tree, a nested lineage of the categories with parent-&gt;child relationship. The Category objects returned are simplified versions of the category objects returned in the rest of this API. 

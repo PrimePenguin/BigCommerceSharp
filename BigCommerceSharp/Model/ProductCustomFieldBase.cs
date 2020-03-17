@@ -1,11 +1,8 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// Gets custom fields associated with a product. These allow you to specify additional information that will appear on the product&#39;s page, such as a book&#39;s ISBN or a DVD&#39;s release date.

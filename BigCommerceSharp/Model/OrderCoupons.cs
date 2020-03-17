@@ -1,11 +1,8 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// |Type &#x60;int&#x60;|Name| |-|-| |&#x60;0&#x60;|&#x60;per_item_discount&#x60;| |&#x60;1&#x60;|&#x60;percentage_discount&#x60;| |&#x60;2&#x60;|&#x60;per_total_discount&#x60;| |&#x60;3&#x60;|&#x60;shipping_discount&#x60;| |&#x60;4&#x60;|&#x60;free_shipping&#x60;| |&#x60;5&#x60;|&#x60;promotion&#x60;|

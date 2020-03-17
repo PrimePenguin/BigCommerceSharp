@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
+using BigCommerceSharp.Client;
+using BigCommerceSharp.Model;
 using RestSharp;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
 
-namespace IO.Swagger.Api
+namespace BigCommerceSharp.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

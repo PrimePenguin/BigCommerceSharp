@@ -1,11 +1,8 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// When applying a manual discount to an order (not a product level discount), the discount is distributed across products in proportion to the products price. &#x60;(total_manual_discount*price_ex_tax)/subtotal_ex_tax&#x60;

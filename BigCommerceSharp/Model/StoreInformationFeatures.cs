@@ -1,11 +1,8 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// + &#x60;stencil_enabled&#x60;: &#x60;true&#x60; (boolean)     + &#x60;sitewidehttps_enabled&#x60;: &#x60;false&#x60; (boolean)     + &#x60;facebook_catalog_id&#x60; (string)

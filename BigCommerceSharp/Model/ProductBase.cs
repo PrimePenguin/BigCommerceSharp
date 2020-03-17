@@ -1,11 +1,10 @@
 using System;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// Shared &#x60;Product&#x60; properties used in: * &#x60;POST&#x60; * &#x60;PUT&#x60; * &#x60;GET&#x60;

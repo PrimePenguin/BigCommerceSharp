@@ -1,11 +1,10 @@
 using System;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// The values for option config can vary based on the Modifier created.

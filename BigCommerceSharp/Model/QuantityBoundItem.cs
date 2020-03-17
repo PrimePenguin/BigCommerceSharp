@@ -1,11 +1,8 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 using Newtonsoft.Json;
 
-namespace IO.Swagger.Model {
+namespace BigCommerceSharp.Model {
 
   /// <summary>
   /// Quantity Bound Item  Type of refund item that capture refunding of items in the order that are of type quantity.  * &#x60;PRODUCT&#x60; * &#x60;GIFT_WRAPPING&#x60; 

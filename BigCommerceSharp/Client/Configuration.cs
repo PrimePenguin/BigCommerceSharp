@@ -1,11 +1,10 @@
 using System;
-using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 
-namespace IO.Swagger.Client
+namespace BigCommerceSharp.Client
 {
     /// <summary>
     /// Represents a set of configuration settings
