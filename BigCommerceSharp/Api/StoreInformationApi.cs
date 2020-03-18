@@ -17,9 +17,9 @@ namespace BigCommerceSharp.Api
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <returns>StoreInformation</returns>
-        StoreInformation StoreGet (string accept, string contentType);
+        StoreInformation StoreGet(string accept, string contentType);
     }
-  
+
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
@@ -33,11 +33,11 @@ namespace BigCommerceSharp.Api
         public StoreInformationApi(ApiClient apiClient = null)
         {
             if (apiClient == null) // use the default one in Configuration
-                this.ApiClient = Configuration.DefaultApiClient; 
+                this.ApiClient = Configuration.DefaultApiClient;
             else
                 this.ApiClient = apiClient;
         }
-    
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StoreInformationApi"/> class.
         /// </summary>
@@ -46,7 +46,7 @@ namespace BigCommerceSharp.Api
         {
             this.ApiClient = new ApiClient(basePath);
         }
-    
+
         /// <summary>
         /// Sets the base path of the API client.
         /// </summary>
@@ -56,7 +56,7 @@ namespace BigCommerceSharp.Api
         {
             this.ApiClient.BasePath = basePath;
         }
-    
+
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
@@ -66,54 +66,54 @@ namespace BigCommerceSharp.Api
         {
             return this.ApiClient.BasePath;
         }
-    
+
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient {get; set;}
-    
+        public ApiClient ApiClient { get; set; }
+
         /// <summary>
         /// Get Store Information Returns metadata about a store.
         /// </summary>
-        /// <param name="accept"></param> 
-        /// <param name="contentType"></param> 
-        /// <returns>StoreInformation</returns>            
-        public StoreInformation StoreGet (string accept, string contentType)
+        /// <param name="accept"></param>
+        /// <param name="contentType"></param>
+        /// <returns>StoreInformation</returns>
+        public StoreInformation StoreGet(string accept, string contentType)
         {
-            
+
             // verify the required parameter 'accept' is set
             if (accept == null) throw new ApiException(400, "Missing required parameter 'accept' when calling StoreGet");
-            
+
             // verify the required parameter 'contentType' is set
             if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling StoreGet");
-            
-    
+
+
             var path = "/store";
             path = path.Replace("{format}", "json");
-                
+
             var queryParams = new Dictionary<string, string>();
             var headerParams = new Dictionary<string, string>();
             var formParams = new Dictionary<string, string>();
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
-    
-                         if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
- if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
-                            
+
+            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
+            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
+
             // authentication setting, if any
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
-    
+
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
+            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling StoreGet: " + response.Content, response.Content);
+                throw new ApiException((int)response.StatusCode, "Error calling StoreGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling StoreGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (StoreInformation) ApiClient.Deserialize(response.Content, typeof(StoreInformation), response.Headers);
+                throw new ApiException((int)response.StatusCode, "Error calling StoreGet: " + response.ErrorMessage, response.ErrorMessage);
+
+            return (StoreInformation)ApiClient.Deserialize(response.Content, typeof(StoreInformation), response.Headers);
         }
-    
+
     }
 }
