@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
@@ -15,14 +16,14 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
-    public InlineResponse200Data Data { get; set; }
+    public List<Object> Data { get; set; }
 
     /// <summary>
     /// Gets or Sets Meta
     /// </summary>
     [DataMember(Name="meta", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "meta")]
-    public object Meta { get; set; }
+    public MetaCollectionFull1 Meta { get; set; }
 
 
     /// <summary>

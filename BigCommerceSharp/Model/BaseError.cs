@@ -32,6 +32,13 @@ namespace BigCommerceSharp.Model {
     [JsonProperty(PropertyName = "type")]
     public string Type { get; set; }
 
+    /// <summary>
+    /// Gets or Sets Instance
+    /// </summary>
+    [DataMember(Name="instance", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "instance")]
+    public string Instance { get; set; }
+
 
     /// <summary>
     /// Get the string presentation of the object
@@ -43,6 +50,7 @@ namespace BigCommerceSharp.Model {
       sb.Append("  Status: ").Append(Status).Append("\n");
       sb.Append("  Title: ").Append(Title).Append("\n");
       sb.Append("  Type: ").Append(Type).Append("\n");
+      sb.Append("  Instance: ").Append(Instance).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

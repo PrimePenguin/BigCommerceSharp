@@ -495,7 +495,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="custom_fields", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "custom_fields")]
-    public List<object> CustomFields { get; set; }
+    public List<Object> CustomFields { get; set; }
 
     /// <summary>
     /// Gets or Sets BulkPricingRules
@@ -509,14 +509,14 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="variants", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "variants")]
-    public List<object> Variants { get; set; }
+    public List<Object> Variants { get; set; }
 
     /// <summary>
     /// Gets or Sets Images
     /// </summary>
     [DataMember(Name="images", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "images")]
-    public List<object> Images { get; set; }
+    public List<Object> Images { get; set; }
 
     /// <summary>
     /// Common ProductImage properties.
@@ -524,14 +524,14 @@ namespace BigCommerceSharp.Model {
     /// <value>Common ProductImage properties.</value>
     [DataMember(Name="primary_image", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "primary_image")]
-    public object PrimaryImage { get; set; }
+    public Object PrimaryImage { get; set; }
 
     /// <summary>
     /// Gets or Sets Videos
     /// </summary>
     [DataMember(Name="videos", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "videos")]
-    public List<object> Videos { get; set; }
+    public List<Object> Videos { get; set; }
 
 
     /// <summary>

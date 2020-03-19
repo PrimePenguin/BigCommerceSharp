@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  /// Optional, but if you include it, its value must refer/map to the same carrier service as the &#x60;shipping_provider&#x60; value.
   /// </summary>
   [DataContract]
   public class TrackingCarrier {

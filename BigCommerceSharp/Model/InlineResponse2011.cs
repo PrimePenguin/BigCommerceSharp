@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  ///
   /// </summary>
   [DataContract]
   public class InlineResponse2011 {

@@ -10,7 +10,7 @@ namespace BigCommerceSharp.Model {
   /// The model for batch updating products.
   /// </summary>
   [DataContract]
-  public class ProductPutCollection : List<object> {
+  public class ProductPutCollection : List<Object> {
 
     /// <summary>
     /// Get the string presentation of the object

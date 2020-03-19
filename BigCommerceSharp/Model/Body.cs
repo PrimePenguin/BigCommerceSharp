@@ -10,20 +10,11 @@ namespace BigCommerceSharp.Model {
   [DataContract]
   public class Body {
     /// <summary>
-    /// Channel ID for requested token
+    /// Gets or Sets CarrierId
     /// </summary>
-    /// <value>Channel ID for requested token</value>
-    [DataMember(Name="channel_id", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "channel_id")]
-    public int? ChannelId { get; set; }
-
-    /// <summary>
-    /// Unix timestamp (UTC time) defining when the token should expire.
-    /// </summary>
-    /// <value>Unix timestamp (UTC time) defining when the token should expire.</value>
-    [DataMember(Name="expires_at", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "expires_at")]
-    public int? ExpiresAt { get; set; }
+    [DataMember(Name="carrier_id", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "carrier_id")]
+    public string CarrierId { get; set; }
 
 
     /// <summary>
@@ -33,8 +24,7 @@ namespace BigCommerceSharp.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class Body {\n");
-      sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");
-      sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+      sb.Append("  CarrierId: ").Append(CarrierId).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

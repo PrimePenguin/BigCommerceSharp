@@ -113,30 +113,6 @@ namespace BigCommerceSharp.Model {
     public Custom1 Custom { get; set; }
 
     /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  {
-      var sb = new StringBuilder();
-      sb.Append("class TransactionPost {\n");
-      sb.Append("  Event: ").Append(Event).Append("\n");
-      sb.Append("  Method: ").Append(Method).Append("\n");
-      sb.Append("  Amount: ").Append(Amount).Append("\n");
-      sb.Append("  Currency: ").Append(Currency).Append("\n");
-      sb.Append("  Gateway: ").Append(Gateway).Append("\n");
-      sb.Append("  GatewayTransactionId: ").Append(GatewayTransactionId).Append("\n");
-      sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
-      sb.Append("  Test: ").Append(Test).Append("\n");
-      sb.Append("  Status: ").Append(Status).Append("\n");
-      sb.Append("  FraudReview: ").Append(FraudReview).Append("\n");
-      sb.Append("  ReferenceTransactionId: ").Append(ReferenceTransactionId).Append("\n");
-      sb.Append("  Offline: ").Append(Offline).Append("\n");
-      sb.Append("  Custom: ").Append(Custom).Append("\n");
-      sb.Append("}\n");
-      return sb.ToString();
-    }
-
-    /// <summary>
     /// Get the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>

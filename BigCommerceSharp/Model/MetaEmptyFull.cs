@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  /// Empty meta object; may be used later.
   /// </summary>
   [DataContract]
   public class MetaEmptyFull {

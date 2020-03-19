@@ -10,7 +10,7 @@ namespace BigCommerceSharp.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class ItemsRequest : List<object> {
+  public class ItemsRequest : List<Object> {
 
     /// <summary>
     /// Get the string presentation of the object

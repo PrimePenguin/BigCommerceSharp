@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  /// Data about the response, including pagination and collection totals.
   /// </summary>
   [DataContract]
   public class MetaCollectionFull {

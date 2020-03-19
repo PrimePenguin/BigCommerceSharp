@@ -10,7 +10,7 @@ namespace BigCommerceSharp.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class VariantCollectionPut : List<object> {
+  public class VariantCollectionPut : List<Object> {
 
     /// <summary>
     /// Get the string presentation of the object

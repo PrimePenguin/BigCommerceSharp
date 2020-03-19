@@ -5,46 +5,46 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  /// Data about the response, including pagination and collection totals.
   /// </summary>
   [DataContract]
   public class PaginationFull1 {
     /// <summary>
-    /// Total number of items in the result set.
+    /// Total number of items in the result set. 
     /// </summary>
-    /// <value>Total number of items in the result set.</value>
+    /// <value>Total number of items in the result set. </value>
     [DataMember(Name="total", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "total")]
     public int? Total { get; set; }
 
     /// <summary>
-    /// Total number of items in the collection response.
+    /// Total number of items in the collection response. 
     /// </summary>
-    /// <value>Total number of items in the collection response.</value>
+    /// <value>Total number of items in the collection response. </value>
     [DataMember(Name="count", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "count")]
     public int? Count { get; set; }
 
     /// <summary>
-    /// The amount of items returned in the collection per page, controlled by the limit parameter.
+    /// The amount of items returned in the collection per page, controlled by the limit parameter. 
     /// </summary>
-    /// <value>The amount of items returned in the collection per page, controlled by the limit parameter.</value>
+    /// <value>The amount of items returned in the collection per page, controlled by the limit parameter. </value>
     [DataMember(Name="per_page", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "per_page")]
     public int? PerPage { get; set; }
 
     /// <summary>
-    /// The page you are currently on within the collection.
+    /// The page you are currently on within the collection. 
     /// </summary>
-    /// <value>The page you are currently on within the collection.</value>
+    /// <value>The page you are currently on within the collection. </value>
     [DataMember(Name="current_page", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "current_page")]
     public int? CurrentPage { get; set; }
 
     /// <summary>
-    /// The total number of pages in the collection.
+    /// The total number of pages in the collection. 
     /// </summary>
-    /// <value>The total number of pages in the collection.</value>
+    /// <value>The total number of pages in the collection. </value>
     [DataMember(Name="total_pages", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "total_pages")]
     public int? TotalPages { get; set; }
@@ -54,7 +54,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="links", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "links")]
-    public LinksFull1 Links { get; set; }
+    public PaginationFull1Links Links { get; set; }
 
 
     /// <summary>

@@ -10,7 +10,7 @@ namespace BigCommerceSharp.Model {
   [DataContract]
   public class AdjusterFull {
     /// <summary>
-    /// The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront. 
+    /// The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront.
     /// </summary>
     /// <value>The type of adjuster for either the price or the weight of the variant, when the modifier value is selected on the storefront. </value>
     [DataMember(Name="adjuster", EmitDefaultValue=false)]
@@ -18,7 +18,7 @@ namespace BigCommerceSharp.Model {
     public string Adjuster { get; set; }
 
     /// <summary>
-    /// The numeric amount by which the adjuster will change either the price or the weight of the variant, when the modifier value is selected on the storefront. 
+    /// The numeric amount by which the adjuster will change either the price or the weight of the variant, when the modifier value is selected on the storefront.
     /// </summary>
     /// <value>The numeric amount by which the adjuster will change either the price or the weight of the variant, when the modifier value is selected on the storefront. </value>
     [DataMember(Name="adjuster_value", EmitDefaultValue=false)]

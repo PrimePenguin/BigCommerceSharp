@@ -24,7 +24,7 @@ namespace BigCommerceSharp.Model {
     /// <value>`fixed_surcharge`: flat-rate handling fee applied to shipping cost.  `percentage_surcharge`: percentage handling fee applied to shipping cost</value>
     [DataMember(Name="handling_fees", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "handling_fees")]
-    public object HandlingFees { get; set; }
+    public Object HandlingFees { get; set; }
 
     /// <summary>
     /// Shipping-method ID. READ-ONLY

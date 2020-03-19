@@ -40,7 +40,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Extra data describing the value, based on the type of option or modifier with which the value is associated. The `swatch` type option can accept an array of `colors`, with up to three hexidecimal color keys; or an `image_url`, which is a full image URL path including protocol. The `product list` type option requires a `product_id`. The `checkbox` type option requires a boolean flag, called `checked_value`, to determine which value is considered to be the checked state. </value>
     [DataMember(Name="value_data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "value_data")]
-    public object ValueData { get; set; }
+    public Object ValueData { get; set; }
 
 
     /// <summary>

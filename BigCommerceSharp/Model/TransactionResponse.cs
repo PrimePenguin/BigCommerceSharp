@@ -16,7 +16,7 @@ namespace BigCommerceSharp.Model {
     /// <value>A BigCommerce Transaction object describes a single transaction.</value>
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
-    public object Data { get; set; }
+    public Object Data { get; set; }
 
     /// <summary>
     /// May be used in the future
@@ -24,7 +24,7 @@ namespace BigCommerceSharp.Model {
     /// <value>May be used in the future</value>
     [DataMember(Name="meta", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "meta")]
-    public object Meta { get; set; }
+    public Object Meta { get; set; }
 
 
     /// <summary>
