@@ -7,9 +7,9 @@ build_script:
 environment:
   APPVEYOR_REPO_TAG: true
 artifacts:
-- path: SquarespaceSharp/bin/Release/netstandard1.4
+- path: BigCommerceSharp/bin/Release/netstandard1.4
   name: netstandard16
-- path: SquarespaceSharp/bin/Release/net45
+- path: BigCommerceSharp/bin/Release/net45
   name: net461
 skip_commits:
   message: /\[skip\]/
@@ -22,6 +22,6 @@ skip_commits:
 deploy:
 - provider: NuGet
   api_key:
-    secure: +g+5jf6BcIJOVmbSPUsP2YZG3WSCx1oDtxdcj9WgsJhRoWoWXWsf5w0OC3TPunMM
+    secure: KNvqUypAbbemdXpgdBuVL1T9MppAJoAyuwUSKtz9TuvXgAWFWW+AObNgrWxM/CcS
   on:
     branch: master

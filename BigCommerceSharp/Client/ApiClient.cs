@@ -246,27 +246,6 @@ namespace BigCommerceSharp.Client
         public void UpdateParamsForAuth(Dictionary<string, string> queryParams, Dictionary<string, string> headerParams, string[] authSettings)
         {
             return;
-            //if (authSettings == null || authSettings.Length == 0)
-            //    return;
-
-            //foreach (string auth in authSettings)
-            //{
-            //    // determine which one to use
-            //    switch(auth)
-            //    {
-            //        case "X-Auth-Client":
-            //            headerParams["X-Auth-Client"] = GetApiKeyWithPrefix("X-Auth-Client");
-
-            //            break;
-            //        case "X-Auth-Token":
-            //            headerParams["X-Auth-Token"] = GetApiKeyWithPrefix("X-Auth-Token");
-
-            //            break;
-            //        default:
-            //            //TODO show warning about security definition not found
-            //            break;
-            //    }
-            //}
         }
 
         /// <summary>
