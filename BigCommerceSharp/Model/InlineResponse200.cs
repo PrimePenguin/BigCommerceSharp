@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace BigCommerceSharp.Model {
 
   /// <summary>
-  /// 
+  ///
   /// </summary>
   [DataContract]
   public class InlineResponse200 {
@@ -16,7 +16,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
-    public List<Object> Data { get; set; }
+    public List<ProductBase> Data { get; set; }
 
     /// <summary>
     /// Gets or Sets Meta

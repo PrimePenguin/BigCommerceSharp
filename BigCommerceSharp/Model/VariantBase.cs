@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
@@ -9,6 +10,51 @@ namespace BigCommerceSharp.Model {
   /// </summary>
   [DataContract]
   public class VariantBase {
+    /// <summary>
+    /// Gets or Sets Id
+    /// </summary>
+    [DataMember(Name = "id", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "id")]
+    public int? Id { get; set; }
+
+    /// <summary>
+    /// Gets or Sets ProductId
+    /// </summary>
+    [DataMember(Name = "product_id", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "product_id")]
+    public int? ProductId { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Sku
+    /// </summary>
+    [DataMember(Name = "sku", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "sku")]
+    public string Sku { get; set; }
+
+    /// <summary>
+    /// Read-only reference to v2 API's SKU ID. Null if it is a base variant.
+    /// </summary>
+    /// <value>Read-only reference to v2 API's SKU ID. Null if it is a base variant.</value>
+    [DataMember(Name = "sku_id", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "sku_id")]
+    public int? SkuId { get; set; }
+
+    /// <summary>
+    /// Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.
+    /// </summary>
+    /// <value>Array of option and option values IDs that make up this variant. Will be empty if the variant is the product's base variant.</value>
+    [DataMember(Name = "option_values", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "option_values")]
+    public List<ProductVariantOptionValueBase1> OptionValues { get; set; }
+
+    /// <summary>
+    /// The price of the variant as seen on the storefront. This price takes into account `sale_price` and any price adjustment rules that are applicable to this variant.
+    /// </summary>
+    /// <value>The price of the variant as seen on the storefront. This price takes into account `sale_price` and any price adjustment rules that are applicable to this variant. </value>
+    [DataMember(Name = "calculated_price", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "calculated_price")]
+    public double? CalculatedPrice { get; set; }
+
     /// <summary>
     /// The cost price of the variant. Not affected by Price List prices.
     /// </summary>
@@ -50,7 +96,7 @@ namespace BigCommerceSharp.Model {
     public double? Weight { get; set; }
 
     /// <summary>
-    /// Width of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default width (set in the Product resource's `width` field) will be used as the base width. 
+    /// Width of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default width (set in the Product resource's `width` field) will be used as the base width.
     /// </summary>
     /// <value>Width of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default width (set in the Product resource's `width` field) will be used as the base width. </value>
     [DataMember(Name="width", EmitDefaultValue=false)]
@@ -58,7 +104,7 @@ namespace BigCommerceSharp.Model {
     public double? Width { get; set; }
 
     /// <summary>
-    /// Height of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default height (set in the Product resource's `height` field) will be used as the base height. 
+    /// Height of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default height (set in the Product resource's `height` field) will be used as the base height.
     /// </summary>
     /// <value>Height of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default height (set in the Product resource's `height` field) will be used as the base height. </value>
     [DataMember(Name="height", EmitDefaultValue=false)]
@@ -66,7 +112,7 @@ namespace BigCommerceSharp.Model {
     public double? Height { get; set; }
 
     /// <summary>
-    /// Depth of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default depth (set in the Product resource's `depth` field) will be used as the base depth. 
+    /// Depth of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default depth (set in the Product resource's `depth` field) will be used as the base depth.
     /// </summary>
     /// <value>Depth of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default depth (set in the Product resource's `depth` field) will be used as the base depth. </value>
     [DataMember(Name="depth", EmitDefaultValue=false)]
@@ -74,7 +120,7 @@ namespace BigCommerceSharp.Model {
     public double? Depth { get; set; }
 
     /// <summary>
-    /// Flag used to indicate whether the variant has free shipping. If `true`, the shipping cost for the variant will be zero. 
+    /// Flag used to indicate whether the variant has free shipping. If `true`, the shipping cost for the variant will be zero.
     /// </summary>
     /// <value>Flag used to indicate whether the variant has free shipping. If `true`, the shipping cost for the variant will be zero. </value>
     [DataMember(Name="is_free_shipping", EmitDefaultValue=false)]
@@ -82,7 +128,7 @@ namespace BigCommerceSharp.Model {
     public bool? IsFreeShipping { get; set; }
 
     /// <summary>
-    /// A fixed shipping cost for the variant. If defined, this value will be used during checkout instead of normal shipping-cost calculation. 
+    /// A fixed shipping cost for the variant. If defined, this value will be used during checkout instead of normal shipping-cost calculation.
     /// </summary>
     /// <value>A fixed shipping cost for the variant. If defined, this value will be used during checkout instead of normal shipping-cost calculation. </value>
     [DataMember(Name="fixed_cost_shipping_price", EmitDefaultValue=false)]
