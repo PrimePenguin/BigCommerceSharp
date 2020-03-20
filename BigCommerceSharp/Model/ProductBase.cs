@@ -293,6 +293,22 @@ namespace BigCommerceSharp.Model {
     public int? SortOrder { get; set; }
 
     /// <summary>
+    /// The date on which the product was created.
+    /// </summary>
+    /// <value>The date on which the product was created. </value>
+    [DataMember(Name = "date_created", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "date_created")]
+    public DateTime? DateCreated { get; set; }
+
+    /// <summary>
+    /// The date on which the product was modified.
+    /// </summary>
+    /// <value>The date on which the product was modified. </value>
+    [DataMember(Name = "date_modified", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "date_modified")]
+    public DateTime? DateModified { get; set; }
+
+    /// <summary>
     /// The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`.
     /// </summary>
     /// <value>The product condition. Will be shown on the product page if the `is_condition_shown` field's value is `true`. Possible values: `New`, `Used`, `Refurbished`. </value>

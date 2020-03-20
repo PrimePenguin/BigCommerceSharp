@@ -220,16 +220,8 @@ namespace BigCommerceSharp.Api
         /// <param name="sort">Direction to sort orders asc or desc. Ex. sort&#x3D;date_created:desc</param>
         /// <param name="isDeleted">If the order was deleted or archived.</param>
         /// <returns>List&lt;Order2&gt;</returns>
-        public List<Order2> GetAllOrders(string accept, string contentType, int? minId, int? maxId, float? minTotal, decimal? maxTotal, int? customerId, string email, int? statusId, string cartId, string paymentMethod, string minDateCreated, string maxDateCreated, string minDateModified, string maxDateModified, decimal? page, decimal? limit, string sort, bool? isDeleted)
+        public List<Order2> GetAllOrders(int? minId, int? maxId, float? minTotal, decimal? maxTotal, int? customerId, string email, int? statusId, string cartId, string paymentMethod, string minDateCreated, string maxDateCreated, string minDateModified, string maxDateModified, decimal? page, decimal? limit, string sort, bool? isDeleted)
         {
-
-            // verify the required parameter 'accept' is set
-            if (accept == null) throw new ApiException(400, "Missing required parameter 'accept' when calling GetAllOrders");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling GetAllOrders");
-
-
             var path = "/orders";
             path = path.Replace("{format}", "json");
 
@@ -256,8 +248,6 @@ namespace BigCommerceSharp.Api
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
             if (isDeleted != null) queryParams.Add("is_deleted", ApiClient.ParameterToString(isDeleted)); // query parameter
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
 
             // authentication setting, if any
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
@@ -281,15 +271,8 @@ namespace BigCommerceSharp.Api
         /// <param name="orderId">ID of the order</param>
         /// <param name="body"></param>
         /// <returns>Order1</returns>
-        public Order1 GetAnOrder(string accept, string contentType, int? orderId, object body)
+        public Order2 GetAnOrder(int? orderId, object body)
         {
-
-            // verify the required parameter 'accept' is set
-            if (accept == null) throw new ApiException(400, "Missing required parameter 'accept' when calling GetAnOrder");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling GetAnOrder");
-
             // verify the required parameter 'orderId' is set
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling GetAnOrder");
 
@@ -304,8 +287,6 @@ namespace BigCommerceSharp.Api
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
 
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any
@@ -319,7 +300,7 @@ namespace BigCommerceSharp.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException((int)response.StatusCode, "Error calling GetAnOrder: " + response.ErrorMessage, response.ErrorMessage);
 
-            return (Order1)ApiClient.Deserialize(response.Content, typeof(Order1), response.Headers);
+            return (Order2)ApiClient.Deserialize(response.Content, typeof(Order2), response.Headers);
         }
 
         /// <summary>
@@ -372,14 +353,8 @@ namespace BigCommerceSharp.Api
         /// <param name="body"></param>
         /// <param name="orderId">ID of the order</param>
         /// <returns>Order1</returns>
-        public Order1 UpdateAnOrder(string accept, string contentType, OrderPost1 body, int? orderId)
+        public Order1 UpdateAnOrder(OrderPost1 body, int? orderId)
         {
-
-            // verify the required parameter 'accept' is set
-            if (accept == null) throw new ApiException(400, "Missing required parameter 'accept' when calling UpdateAnOrder");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling UpdateAnOrder");
 
             // verify the required parameter 'body' is set
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling UpdateAnOrder");
@@ -398,8 +373,6 @@ namespace BigCommerceSharp.Api
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
 
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any

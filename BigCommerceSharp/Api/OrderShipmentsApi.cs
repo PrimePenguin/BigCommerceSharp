@@ -55,21 +55,12 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <returns>OrderShipment1</returns>
-        public OrderShipment1 CreateOrderShipments(int? orderId, string accept, string contentType,
-            OrderShipmentPost1 body)
+        public OrderShipment1 CreateOrderShipments(int? orderId, OrderShipmentPost1 body)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
                 throw new ApiException(400, "Missing required parameter 'orderId' when calling CreateOrderShipments");
 
-            // verify the required parameter 'accept' is set
-            if (accept == null)
-                throw new ApiException(400, "Missing required parameter 'accept' when calling CreateOrderShipments");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null)
-                throw new ApiException(400,
-                    "Missing required parameter 'contentType' when calling CreateOrderShipments");
 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -86,9 +77,6 @@ namespace BigCommerceSharp.Api
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
 
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null)
-                headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any
@@ -228,22 +216,11 @@ namespace BigCommerceSharp.Api
         /// <param name="page">The page to return in the response.</param>
         /// <param name="limit">Number of results to return.</param>
         /// <returns>List&lt;OrderShipment&gt;</returns>
-        public List<OrderShipment> GetAllOrderShipments(int? orderId, string accept, string contentType, decimal? page,
-            decimal? limit)
+        public List<OrderShipment> GetAllOrderShipments(int? orderId, decimal? page, decimal? limit)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
                 throw new ApiException(400, "Missing required parameter 'orderId' when calling GetAllOrderShipments");
-
-            // verify the required parameter 'accept' is set
-            if (accept == null)
-                throw new ApiException(400, "Missing required parameter 'accept' when calling GetAllOrderShipments");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null)
-                throw new ApiException(400,
-                    "Missing required parameter 'contentType' when calling GetAllOrderShipments");
-
 
             var path = "/orders/{order_id}/shipments";
             path = path.Replace("{format}", "json");
@@ -257,9 +234,6 @@ namespace BigCommerceSharp.Api
 
             if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null)
-                headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
 
             // authentication setting, if any
             string[] authSettings = { "X-Auth-Client", "X-Auth-Token" };
@@ -401,8 +375,7 @@ namespace BigCommerceSharp.Api
         /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <returns>OrderShipment1</returns>
-        public OrderShipment1 UpdateOrderShipment(int? orderId, int? shipmentId, string accept, string contentType,
-            OrderShipmentPost2 body)
+        public OrderShipment1 UpdateOrderShipment(int? orderId, int? shipmentId, OrderShipmentPost2 body)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -411,15 +384,6 @@ namespace BigCommerceSharp.Api
             // verify the required parameter 'shipmentId' is set
             if (shipmentId == null)
                 throw new ApiException(400, "Missing required parameter 'shipmentId' when calling UpdateOrderShipment");
-
-            // verify the required parameter 'accept' is set
-            if (accept == null)
-                throw new ApiException(400, "Missing required parameter 'accept' when calling UpdateOrderShipment");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null)
-                throw new ApiException(400,
-                    "Missing required parameter 'contentType' when calling UpdateOrderShipment");
 
             // verify the required parameter 'body' is set
             if (body == null)
@@ -437,9 +401,6 @@ namespace BigCommerceSharp.Api
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
 
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null)
-                headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(body); // http body (model) parameter
 
             // authentication setting, if any

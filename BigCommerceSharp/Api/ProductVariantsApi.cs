@@ -286,7 +286,7 @@ namespace BigCommerceSharp.Api
         /// <param name="variantId">ID of the variant on a product, or on an associated Price List Record. </param>
         /// <param name="variant"></param>
         /// <returns>VariantResponse</returns>
-        public VariantResponse UpdateVariant(int? productId, int? variantId, object variant, string accept, string contentType)
+        public VariantResponse UpdateVariant(int? productId, int? variantId, object variant)
         {
 
             // verify the required parameter 'productId' is set
@@ -310,8 +310,6 @@ namespace BigCommerceSharp.Api
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
 
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
             postBody = ApiClient.Serialize(variant); // http body (model) parameter
 
             // authentication setting, if any

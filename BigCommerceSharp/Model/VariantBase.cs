@@ -160,6 +160,30 @@ namespace BigCommerceSharp.Model {
     public string Upc { get; set; }
 
     /// <summary>
+    /// Global Trade Item Number
+    /// </summary>
+    /// <value>Global Trade Item Number</value>
+    [DataMember(Name = "gtin", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "gtin")]
+    public string Gtin { get; set; }
+
+    /// <summary>
+    /// Manufacturer Part Number
+    /// </summary>
+    /// <value>Manufacturer Part Number</value>
+    [DataMember(Name = "mpn", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "mpn")]
+    public string Mpn { get; set; }
+
+    /// <summary>
+    /// Must be a fully qualified URL path, including protocol. Limit of 8MB per file.
+    /// </summary>
+    /// <value>Must be a fully qualified URL path, including protocol. Limit of 8MB per file.</value>
+    [DataMember(Name = "image_url", EmitDefaultValue = false)]
+    [JsonProperty(PropertyName = "image_url")]
+    public string ImageUrl { get; set; }
+
+    /// <summary>
     /// Inventory level for the variant, which is used when the product's inventory_tracking is set to `variant`.
     /// </summary>
     /// <value>Inventory level for the variant, which is used when the product's inventory_tracking is set to `variant`.</value>
