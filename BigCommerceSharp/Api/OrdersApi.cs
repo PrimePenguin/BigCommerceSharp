@@ -220,7 +220,7 @@ namespace BigCommerceSharp.Api
         /// <param name="sort">Direction to sort orders asc or desc. Ex. sort&#x3D;date_created:desc</param>
         /// <param name="isDeleted">If the order was deleted or archived.</param>
         /// <returns>List&lt;Order2&gt;</returns>
-        public List<Order2> GetAllOrders(int? minId, int? maxId, float? minTotal, decimal? maxTotal, int? customerId, string email, int? statusId, string cartId, string paymentMethod, string minDateCreated, string maxDateCreated, string minDateModified, string maxDateModified, decimal? page, decimal? limit, string sort, bool? isDeleted)
+        public List<Order2> GetAllOrders(int? minId = null, int? maxId = null, float? minTotal = null, decimal? maxTotal = null, int? customerId = null, string email = null, int? statusId = null, string cartId = null, string paymentMethod = null, string minDateCreated = null, string maxDateCreated = null, string minDateModified = null, string maxDateModified = null, decimal? page = null, decimal? limit = null, string sort = null, bool? isDeleted = null)
         {
             var path = "/orders";
             path = path.Replace("{format}", "json");
