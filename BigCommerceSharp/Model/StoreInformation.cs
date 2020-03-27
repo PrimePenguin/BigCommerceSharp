@@ -100,13 +100,6 @@ namespace BigCommerceSharp.Model {
     public string OrderEmail { get; set; }
 
     /// <summary>
-    /// Gets or Sets Timezone
-    /// </summary>
-    [DataMember(Name="timezone", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "timezone")]
-    public TimeZone Timezone { get; set; }
-
-    /// <summary>
     /// Default language code.
     /// </summary>
     /// <value>Default language code.</value>
@@ -227,27 +220,12 @@ namespace BigCommerceSharp.Model {
     public string Industry { get; set; }
 
     /// <summary>
-    /// Gets or Sets Logo
-    /// </summary>
-    [DataMember(Name="logo", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "logo")]
-    public StoreInformationLogo Logo { get; set; }
-
-    /// <summary>
     /// A Boolean value that indicates whether or not prices are entered with tax.
     /// </summary>
     /// <value>A Boolean value that indicates whether or not prices are entered with tax.</value>
     [DataMember(Name="is_price_entered_with_tax", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "is_price_entered_with_tax")]
     public bool? IsPriceEnteredWithTax { get; set; }
-
-    /// <summary>
-    ///
-    /// </summary>
-    /// <value></value>
-    [DataMember(Name="active_comparison_modules", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "active_comparison_modules")]
-    public List<Object> ActiveComparisonModules { get; set; }
 
     /// <summary>
     /// Gets or Sets Features
@@ -275,7 +253,6 @@ namespace BigCommerceSharp.Model {
       sb.Append("  Phone: ").Append(Phone).Append("\n");
       sb.Append("  AdminEmail: ").Append(AdminEmail).Append("\n");
       sb.Append("  OrderEmail: ").Append(OrderEmail).Append("\n");
-      sb.Append("  Timezone: ").Append(Timezone).Append("\n");
       sb.Append("  Language: ").Append(Language).Append("\n");
       sb.Append("  Currency: ").Append(Currency).Append("\n");
       sb.Append("  CurrencySymbol: ").Append(CurrencySymbol).Append("\n");
@@ -291,9 +268,7 @@ namespace BigCommerceSharp.Model {
       sb.Append("  PlanName: ").Append(PlanName).Append("\n");
       sb.Append("  PlanLevel: ").Append(PlanLevel).Append("\n");
       sb.Append("  Industry: ").Append(Industry).Append("\n");
-      sb.Append("  Logo: ").Append(Logo).Append("\n");
       sb.Append("  IsPriceEnteredWithTax: ").Append(IsPriceEnteredWithTax).Append("\n");
-      sb.Append("  ActiveComparisonModules: ").Append(ActiveComparisonModules).Append("\n");
       sb.Append("  Features: ").Append(Features).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
