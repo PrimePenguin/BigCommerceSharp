@@ -63,10 +63,8 @@ namespace BigCommerceSharp.Api
         /// Get Refunds for Order Returns a list of refunds ordered by refund ID in ascending order for the given order.
         /// </summary>
         /// <param name="orderId"></param>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <returns>InlineResponse200</returns>
-        public OrderRefundResponse Getorderrefunds(string orderId, string accept, string contentType)
+        public OrderRefundResponse GetOrderRefunds(string orderId)
         {
 
             // verify the required parameter 'orderId' is set
@@ -82,9 +80,6 @@ namespace BigCommerceSharp.Api
             var formParams = new Dictionary<string, string>();
             var fileParams = new Dictionary<string, FileParameter>();
             string postBody = null;
-
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
 
             // authentication setting, if any
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };

@@ -63,23 +63,14 @@ namespace BigCommerceSharp.Api
         /// List Order Products Lists all order products on an order using &#x60;order_id&#x60;. By default, items sort from lowest to highest according to a newly created ID, separate from the &#x60;order_id&#x60; and the &#x60;product_id&#x60;.
         /// </summary>
         /// <param name="orderId">ID of the order</param>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <param name="page">The page to return in the response.</param>
         /// <param name="limit">Number of results to return.</param>
         /// <returns>List&lt;OrderProducts&gt;</returns>
-        public List<OrderProducts> GetAllOrderProducts(int? orderId, string accept, string contentType, decimal? page, decimal? limit)
+        public List<OrderProducts> GetAllOrderProducts(int? orderId, decimal? page, decimal? limit)
         {
 
             // verify the required parameter 'orderId' is set
             if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling GetAllOrderProducts");
-
-            // verify the required parameter 'accept' is set
-            if (accept == null) throw new ApiException(400, "Missing required parameter 'accept' when calling GetAllOrderProducts");
-
-            // verify the required parameter 'contentType' is set
-            if (contentType == null) throw new ApiException(400, "Missing required parameter 'contentType' when calling GetAllOrderProducts");
-
 
             var path = "/orders/{order_id}/products";
             path = path.Replace("{format}", "json");
@@ -93,8 +84,6 @@ namespace BigCommerceSharp.Api
 
             if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (accept != null) headerParams.Add("Accept", ApiClient.ParameterToString(accept)); // header parameter
-            if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
 
             // authentication setting, if any
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };

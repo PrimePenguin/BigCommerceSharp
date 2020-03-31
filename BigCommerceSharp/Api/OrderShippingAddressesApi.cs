@@ -105,8 +105,6 @@ namespace BigCommerceSharp.Api
         /// Get a List of Order Shipping Addresses Get all shipping addresses on an order using the &#x60;order_id&#x60;.  Returned in the response is shipping_quotes object. Please use the Get Shipping Quotes Endpoint. Using the response will return a 204 for the shipping quote.
         /// </summary>
         /// <param name="orderId">ID of the order</param>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <param name="page">The page to return in the response.</param>
         /// <param name="limit">Number of results to return.</param>
         /// <returns>List&lt;OrderShippingAddress&gt;</returns>
