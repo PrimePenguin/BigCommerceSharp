@@ -66,7 +66,7 @@ namespace BigCommerceSharp.Api
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <returns>InlineResponse200</returns>
-        public InlineResponse200 Getorderrefunds(string orderId, string accept, string contentType)
+        public OrderRefundResponse Getorderrefunds(string orderId, string accept, string contentType)
         {
 
             // verify the required parameter 'orderId' is set
@@ -97,7 +97,7 @@ namespace BigCommerceSharp.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException((int)response.StatusCode, "Error calling Getorderrefunds: " + response.ErrorMessage, response.ErrorMessage);
 
-            return (InlineResponse200)ApiClient.Deserialize(response.Content, typeof(InlineResponse200), response.Headers);
+            return (OrderRefundResponse)ApiClient.Deserialize(response.Content, typeof(OrderRefundResponse), response.Headers);
         }
 
         /// <summary>
