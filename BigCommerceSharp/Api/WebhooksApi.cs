@@ -134,10 +134,8 @@ namespace BigCommerceSharp.Api
         /// Get Webhooks Returns a list of all webhooks on a store associated to the &#x60;client_id&#x60; used to authenticate the request.
         /// </summary>
         /// <returns>List&lt;WebhookFull1&gt;</returns>
-        public List<WebhookFull1> GetAllWebhooks(string accept, string contentType)
+        public List<WebhookFull1> GetAllWebhooks()
         {
-
-
             var path = "/hooks";
             path = path.Replace("{format}", "json");
 

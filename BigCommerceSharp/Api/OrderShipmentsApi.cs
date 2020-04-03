@@ -315,7 +315,7 @@ namespace BigCommerceSharp.Api
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <returns>OrderShipment1</returns>
-        public OrderShipment1 GetOrderShipment(int? orderId, int? shipmentId, string accept, string contentType)
+        public OrderShipment1 GetOrderShipment(int? orderId, int? shipmentId, string accept = null, string contentType = null)
         {
             // verify the required parameter 'orderId' is set
             if (orderId == null)
@@ -325,13 +325,13 @@ namespace BigCommerceSharp.Api
             if (shipmentId == null)
                 throw new ApiException(400, "Missing required parameter 'shipmentId' when calling GetOrderShipment");
 
-            // verify the required parameter 'accept' is set
-            if (accept == null)
-                throw new ApiException(400, "Missing required parameter 'accept' when calling GetOrderShipment");
+            //// verify the required parameter 'accept' is set
+            //if (accept == null)
+            //    throw new ApiException(400, "Missing required parameter 'accept' when calling GetOrderShipment");
 
-            // verify the required parameter 'contentType' is set
-            if (contentType == null)
-                throw new ApiException(400, "Missing required parameter 'contentType' when calling GetOrderShipment");
+            //// verify the required parameter 'contentType' is set
+            //if (contentType == null)
+            //    throw new ApiException(400, "Missing required parameter 'contentType' when calling GetOrderShipment");
 
 
             var path = "/orders/{order_id}/shipments/{shipment_id}";
@@ -371,8 +371,6 @@ namespace BigCommerceSharp.Api
         /// </summary>
         /// <param name="orderId">ID of the order</param>
         /// <param name="shipmentId">Shipment ID</param>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <returns>OrderShipment1</returns>
         public OrderShipment1 UpdateOrderShipment(int? orderId, int? shipmentId, OrderShipmentPost2 body)

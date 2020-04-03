@@ -266,8 +266,6 @@ namespace BigCommerceSharp.Api
         /// <summary>
         /// Get an Order Gets an *Order*. To learn more about creating or updating orders, see [Orders Overview](/api-docs/orders/orders-api-overview).
         /// </summary>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <param name="orderId">ID of the order</param>
         /// <param name="body"></param>
         /// <returns>Order1</returns>
@@ -348,14 +346,11 @@ namespace BigCommerceSharp.Api
         /// <summary>
         /// Update an Order Updates an *Order*. To learn more about creating or updating orders, see [Orders Overview](/api-docs/orders/orders-api-overview).
         /// </summary>
-        /// <param name="accept"></param>
-        /// <param name="contentType"></param>
         /// <param name="body"></param>
         /// <param name="orderId">ID of the order</param>
         /// <returns>Order1</returns>
-        public Order1 UpdateAnOrder(OrderPost1 body, int? orderId)
+        public Order1 UpdateAnOrder(UpdateOrderRequest body, int? orderId)
         {
-
             // verify the required parameter 'body' is set
             if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling UpdateAnOrder");
 

@@ -110,7 +110,7 @@ namespace BigCommerceSharp.Model {
     /// <value>The items in the shipment. This object has the following members, all integer: order_product_id (required), quantity (required), product_id (read-only). A sample items value might be: [ {\"order_product_id\":16,\"product_id\": 0,\"quantity\":2} ]</value>
     [DataMember(Name="items", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "items")]
-    public List<OrdersorderIdshipmentsItems> Items { get; set; }
+    public List<ShipmentLineItem> Items { get; set; }
 
 
     /// <summary>

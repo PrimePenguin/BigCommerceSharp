@@ -35,6 +35,7 @@ namespace BigCommerceSharp.Model
         /// <value>Numeric ID of the product.</value>
         [DataMember(Name = "product_id", EmitDefaultValue = false)]
         [JsonProperty(PropertyName = "product_id")]
+
         public int? ProductId { get; set; }
 
         /// <summary>

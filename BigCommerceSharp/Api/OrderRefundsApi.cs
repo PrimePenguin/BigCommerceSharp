@@ -105,10 +105,8 @@ namespace BigCommerceSharp.Api
         /// <param name="createdmin">Filter results so they are later than or equal to provided date.   Must be in url-encoded RFC 3339 format. e.g. &#x60;2020-01-15T01:02:34-01:00&#x60; is RFC-3339 format.  Url-encoded this will be &#x60;2020-01-15T01%3A02%3A34%2B01%3A00&#x60;</param>
         /// <param name="createdmax">Filter results so they are earlier than or equal to provided date.   Must be in url-encoded RFC 3339 format. e.g. &#x60;2020-01-15T01:02:34-01:00&#x60; is RFC-3339 format.  Url-encoded this will be &#x60;2020-01-15T01%3A02%3A34%2B01%3A00&#x60;</param>
         /// <returns>InlineResponse200</returns>
-        public InlineResponse200 Getrefunds(List<int?> orderIdin, List<int?> idin, string accept, string contentType, DateTime? createdmin, DateTime? createdmax)
+        public InlineResponse200 GetRefunds(List<int?> orderIdin, List<int?> idin, string accept, string contentType, DateTime? createdmin, DateTime? createdmax)
         {
-
-
             var path = "/orders/payment_actions/refunds";
             path = path.Replace("{format}", "json");
 
@@ -147,7 +145,7 @@ namespace BigCommerceSharp.Api
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <returns>InlineResponse2011</returns>
-        public InlineResponse2011 Postrefund(int? orderId, RefundRequest body, string accept, string contentType)
+        public InlineResponse2011 PostRefund(int? orderId, RefundRequest body, string accept = null, string contentType = null)
         {
 
             // verify the required parameter 'orderId' is set
@@ -193,14 +191,14 @@ namespace BigCommerceSharp.Api
         /// <param name="accept"></param>
         /// <param name="contentType"></param>
         /// <returns>InlineResponse201</returns>
-        public InlineResponse201 Postrefundquote(int? orderId, RefundQuoteRequest body, string accept, string contentType)
+        public InlineResponse201 PostRefundQuote(int? orderId, RefundQuoteRequest body, string accept = null, string contentType = null)
         {
 
             // verify the required parameter 'orderId' is set
-            if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling Postrefundquote");
+            if (orderId == null) throw new ApiException(400, "Missing required parameter 'orderId' when calling PostRefundQuote");
 
             // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling Postrefundquote");
+            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling PostRefundQuote");
 
 
             var path = "/orders/{order_id}/payment_actions/refund_quotes";

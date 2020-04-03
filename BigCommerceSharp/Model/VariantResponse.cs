@@ -15,7 +15,7 @@ namespace BigCommerceSharp.Model {
     /// </summary>
     [DataMember(Name="data", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "data")]
-    public Object Data { get; set; }
+    public VariantBase Data { get; set; }
 
     /// <summary>
     /// Empty meta object; may be used later.
