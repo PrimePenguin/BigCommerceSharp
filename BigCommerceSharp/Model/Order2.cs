@@ -15,7 +15,7 @@ namespace BigCommerceSharp.Model {
     /// <value>The ID of the order, a read-only value. Do not pass in PUT or POST.</value>
     [DataMember(Name="id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id")]
-    public int? Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// The ID of the customer placing the order; or 0 if it was a guest order.

@@ -15,7 +15,7 @@ namespace BigCommerceSharp.Model {
     /// <value>Id of the webhook</value>
     [DataMember(Name="id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id")]
-    public int? Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// Client ID, unique to the store

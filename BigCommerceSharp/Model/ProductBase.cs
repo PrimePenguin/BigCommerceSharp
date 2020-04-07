@@ -18,7 +18,7 @@ namespace BigCommerceSharp.Model {
     /// <value>The number of times the product has been rated. </value>
     [DataMember(Name= "id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id")]
-    public int? Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// The product name.
