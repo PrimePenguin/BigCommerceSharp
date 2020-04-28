@@ -97,6 +97,14 @@ namespace BigCommerceSharp.Model
         public double? Weight { get; set; }
 
         /// <summary>
+        /// This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight.
+        /// </summary>
+        /// <value>This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight.</value>
+        [DataMember(Name = "calculated_weight", EmitDefaultValue = false)]
+        [JsonProperty(PropertyName = "calculated_weight")]
+        public double? CalculatedWeight { get; set; }
+
+        /// <summary>
         /// Width of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default width (set in the Product resource's `width` field) will be used as the base width.
         /// </summary>
         /// <value>Width of the variant, which can be used when calculating shipping costs. If this value is `null`, the product's default width (set in the Product resource's `width` field) will be used as the base width. </value>
