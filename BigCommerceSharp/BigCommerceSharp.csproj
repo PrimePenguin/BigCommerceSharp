@@ -17,7 +17,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/BigCommerceSharp/master/PrimePenguin.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="106.2.1" />
   </ItemGroup>
   <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
