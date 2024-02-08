@@ -7,10 +7,14 @@ build_script:
 environment:
   APPVEYOR_REPO_TAG: true
 artifacts:
-- path: BigCommerceSharp/bin/Release/netstandard1.4
-  name: netstandard16
-- path: BigCommerceSharp/bin/Release/net45
-  name: net461
+- path: BigCommerceSharp/bin/Release/netstandard2.0
+  name: netstandard20
+- path: BigCommerceSharp/bin/Release/net6.0
+  name: net60
+- path: BigCommerceSharp/bin/Release/net7.0
+  name: net70
+- path: BigCommerceSharp/bin/Release/net8.0
+  name: net80
 skip_commits:
   message: /\[skip\]/
   files:
@@ -22,6 +26,6 @@ skip_commits:
 deploy:
 - provider: NuGet
   api_key:
-    secure: KNvqUypAbbemdXpgdBuVL1T9MppAJoAyuwUSKtz9TuvXgAWFWW+AObNgrWxM/CcS
+    secure: 2Qfm8tq30586MvEqXEwMmpDEyzJG3fdBw/r2kFi0UG/vUEruTXUPBNA0p/EWj7Am
   on:
     branch: master

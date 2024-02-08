@@ -102,7 +102,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Post, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling CreateOption: " + response.Content, response.Content);
@@ -154,7 +154,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Delete, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling DeleteOptionById: " + response.Content, response.Content);
@@ -210,7 +210,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling GetOptionById: " + response.Content, response.Content);
@@ -255,7 +255,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling GetOptions: " + response.Content, response.Content);
@@ -312,7 +312,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Put, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling UpdateOption: " + response.Content, response.Content);

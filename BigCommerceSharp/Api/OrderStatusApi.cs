@@ -96,7 +96,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling GetAOrderStatus: " + response.Content, response.Content);
@@ -138,7 +138,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling GetOrderStatus: " + response.Content, response.Content);

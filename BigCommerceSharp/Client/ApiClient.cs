@@ -123,10 +123,12 @@ namespace BigCommerceSharp.Client
         /// <returns>FileParameter.</returns>
         public FileParameter ParameterToFile(string name, Stream stream)
         {
-            if (stream is FileStream)
-                return FileParameter.Create(name, stream.ReadAsBytes(), Path.GetFileName(((FileStream)stream).Name));
-            else
-                return FileParameter.Create(name, stream.ReadAsBytes(), "no_file_name_provided");
+            // if (stream is FileStream)
+            //     return FileParameter.Create(name, stream.readReadAsBytes(), Path.GetFileName(((FileStream)stream).Name));
+            // else
+            //     return FileParameter.Create(name, stream.ReadAsBytes(), "no_file_name_provided");
+            //TODO: Fix this
+            return null;
         }
 
         /// <summary>
@@ -157,7 +159,7 @@ namespace BigCommerceSharp.Client
         /// <param name="type">Object type.</param>
         /// <param name="headers">HTTP headers.</param>
         /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(string content, Type type, IList<Parameter> headers=null)
+        public object Deserialize(string content, Type type, IReadOnlyCollection<HeaderParameter> headers=null)
         {
             if (type == typeof(object)) // return an object
             {

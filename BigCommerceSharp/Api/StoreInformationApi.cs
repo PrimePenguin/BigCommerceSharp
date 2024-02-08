@@ -80,7 +80,7 @@ namespace BigCommerceSharp.Api
             String[] authSettings = new String[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse) ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling StoreGet: " + response.Content, response.Content);

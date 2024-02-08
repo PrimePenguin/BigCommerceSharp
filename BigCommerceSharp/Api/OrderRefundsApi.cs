@@ -85,7 +85,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling Getorderrefunds: " + response.Content, response.Content);
@@ -127,7 +127,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Get, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling Getrefunds: " + response.Content, response.Content);
@@ -173,7 +173,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Post, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling Postrefund: " + response.Content, response.Content);
@@ -219,7 +219,7 @@ namespace BigCommerceSharp.Api
             string[] authSettings = new string[] { "X-Auth-Client", "X-Auth-Token" };
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse)ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            var response = (RestResponse)ApiClient.CallApi(path, Method.Post, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException((int)response.StatusCode, "Error calling Postrefundquote: " + response.Content, response.Content);

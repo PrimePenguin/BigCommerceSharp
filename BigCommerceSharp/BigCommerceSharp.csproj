@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;netstandard2.0;net8.0</TargetFrameworks>
     <AssemblyName>BigCommerceSharp</AssemblyName>
     <RootNamespace>BigCommerceSharp</RootNamespace>
-    <Version>0.1.2</Version>
+    <Version>0.2.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>BigCommerceSharp is a C# and .NET library that helps developers easily authenticate with and manage BigCommerce stores.</Description>
@@ -17,8 +17,8 @@
     <PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/BigCommerceSharp/master/PrimePenguin.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
   <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
     <DefineConstants>NETFRAMEWORK</DefineConstants>
